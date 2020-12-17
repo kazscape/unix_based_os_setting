@@ -1,0 +1,35 @@
+---
+- name: Confirm required version
+  shell: bash -lc "pyenv versions | grep {{ required_version }}"
+  register: python_version
+  failed_when: false
+
+- name: Install required version
+  command: bash -lc "pyenv install {{ required_version }}"
+  register: result
+  when: python_version.rc != 0
+
+- name: Set global version
+  command: bash -lc "pyenv global {{ required_version }}"
+  register: result
+  when: result.changed == true
+
+- name: register python_path
+  command: bash -lc "which python"
+  register: python_path
+  failed_when: false
+
+- name: Set fact of python interpreter
+  set_fact: ansible_python_interpreter="{{ python_path.stdout }}"
+  when: result.changed == true
+
+- name: Upgrade pip
+  pip:
+    name: pip
+    state: latest
+
+- name: Install python module
+  pip: 
+    name: "{{ item }}"
+  loop:
+    "{{ required_module }}"
