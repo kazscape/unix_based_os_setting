@@ -1,0 +1,27 @@
+---
+- name: Stat anyenv-install
+  stat:
+    path: ~/.config/anyenv/anyenv-install
+  register: anyenv_install_path
+
+- name: Init anyenv
+  shell: yes | anyenv install --init
+  environment:
+    PATH: "{{ home_dir }}/.anyenv/bin:{{ lookup('env', 'PATH') }}"
+  when: anyenv_install_path.stat.exists == false
+
+- name: Install environment
+  shell: "anyenv install -s {{ item }}"
+  environment:
+    PATH: "{{ home_dir }}/.anyenv/bin:{{ lookup('env', 'PATH') }}"
+  loop:
+    "{{ envs }}"
+
+- name: Create config file
+  blockinfile:
+    dest: "{{ home_dir }}/.bash_profile"
+    create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK Anyenv"
+    block: |
+      export PATH="$HOME/.anyenv/bin:$PATH"
+      eval "$(anyenv init -)"

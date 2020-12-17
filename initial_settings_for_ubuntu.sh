@@ -1,7 +1,16 @@
 #!/bin/bash
 
 # Install required modules
-sudo apt-get install build-essential curl file git
+sudo apt-get install -y \
+build-essential \
+libffi-dev \
+libssl-dev \
+zlib1g-dev \
+liblzma-dev \
+libbz2-dev \
+libreadline-dev \
+libsqlite3-dev \
+git
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
