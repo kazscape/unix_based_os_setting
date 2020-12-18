@@ -5,6 +5,7 @@ required_packages:
   - "fish"
   - "peco"
   - "ghq"
+  - "tmux"
 
 
 
