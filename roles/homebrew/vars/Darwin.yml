@@ -1,0 +1,22 @@
+---
+---
+brew_taps:
+  - homebrew/core
+  - caskroom/cask
+
+brew_packages:
+  - anyenv
+  - tree
+  - fish
+  - peco
+  - ghq
+  - tmux
+  - hub
+  - azure-cli
+
+brew_cask_packages:
+  - alfred
+  - google-chrome
+  - google-japanese-ime
+  - iterm2
+  - visual-studio-code
