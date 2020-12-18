@@ -1,13 +1,16 @@
 ---
-required_packages:
-  - "anyenv"
-  - "tree"
-  - "fish"
-  - "peco"
-  - "ghq"
-  - "tmux"
-  - "hub"
+brew_taps:
+  - homebrew/core
 
+brew_packages:
+  - anyenv
+  - tree
+  - fish
+  - peco
+  - ghq
+  - tmux
+  - hub
+  - azure-cli
 
-
-
+brew_cask_packages:
+  - 

@@ -1,14 +1,28 @@
 - name: Add the OS specific variables
   include_vars: "{{ ansible_os_family }}.yml"
 
+- name: Install homebrew taps
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  loop:
+    "{{ brew_taps }}"
+
 - name: Update homebrew and upgrade all packages
   homebrew:
     update_homebrew: yes
     upgrade_all: yes
 
-- name: Install formula
+- name: Install homebrew packages
   homebrew:
     name: "{{ item }}"
     state: present
   loop:
-    "{{ required_packages }}"
+    "{{ brew_packages }}"
+
+- name: Install homebrew cask packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    "{{ brew_cask_packages }}"
