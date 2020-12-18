@@ -1,0 +1,49 @@
+---
+- name: Register fish_path
+  command: which fish
+  register: fish_path
+  changed_when: fish_path.rc != 0
+
+- name: Add fish to shells
+  lineinfile:
+    path: "/etc/shells"
+    line: "{{ fish_path.stdout }}"
+    state: present
+  become: yes
+
+- name: Make fish config directory
+  file:
+    path: "{{ home_dir }}/.config/fish"
+    state: directory
+    mode: 0755
+
+- name: register anyenv_path
+  command: which anyenv
+  register: anyenv_path
+  failed_when: false
+
+- name: Add anyenv config in fish config file
+  blockinfile:
+    dest: "{{ home_dir }}/.config/fish/config.fish"
+    create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK anyenv"
+    block: |
+      set -x PATH $HOME/.anyenv/bin $PATH
+      eval (anyenv init - | source)
+- name: Make fish function directory
+  file:
+    path: "{{ home_dir }}/.config/fish/functions"
+    state: directory
+    mode: 0755
+
+- name: Install fisher 
+  get_url:
+    url: "https://git.io/fisher"
+    dest: "{{ home_dir }}/.config/fish/functions/fisher.fish"
+
+- name: Install fisher packages
+  shell: fish -lc "fisher install {{ fisher_packages | join(' ') }}"
+
+- name: Change default shell
+  user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
+  become: yes
