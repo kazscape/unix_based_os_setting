@@ -17,6 +17,19 @@
     state: directory
     mode: 0755
 
+- name: register homebrew_path
+  command: which brew
+  register: homebrew_path
+  failed_when: false
+
+- name: Add homebrew config in fish config file
+  blockinfile:
+    dest: "{{ home_dir }}/.config/fish/config.fish"
+    create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK Hombrew"
+    block: "eval ({{ homebrew_path.stdout }} shellenv)"
+  when: homebrew_path.rc == 0
+
 - name: register anyenv_path
   command: which anyenv
   register: anyenv_path
@@ -27,9 +40,9 @@
     dest: "{{ home_dir }}/.config/fish/config.fish"
     create: yes
     marker: "# {mark} ANSIBLE MANAGED BLOCK anyenv"
-    block: |
-      set -x PATH $HOME/.anyenv/bin $PATH
-      eval (anyenv init - | source)
+    block: eval (anyenv init - | source)
+  when: anyenv_path.rc == 0
+
 - name: Make fish function directory
   file:
     path: "{{ home_dir }}/.config/fish/functions"
@@ -43,6 +56,23 @@
 
 - name: Install fisher packages
   shell: fish -lc "fisher install {{ fisher_packages | join(' ') }}"
+
+- name: Add peco config in fish config file
+  blockinfile:
+    dest: "{{ home_dir }}/.config/fish/config.fish"
+    create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK peco"
+    block: |
+      function fish_user_key_bindings
+        bind \cr peco_select_history
+      end
+
+- name: Add ghq config in fish config file
+  blockinfile:
+    dest: "{{ home_dir }}/.config/fish/config.fish"
+    create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK ghq"
+    block: set GHQ_SELECTOR peco
 
 - name: Change default shell
   user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
