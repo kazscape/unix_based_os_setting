@@ -1,7 +1,0 @@
----
-required_packages:
-  - "anyenv"
-  - "tree"
-  - "fish"
-  - "peco"
-  - "ghq"
