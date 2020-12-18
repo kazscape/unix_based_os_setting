@@ -4,7 +4,4 @@ required_packages:
   - "tree"
   - "fish"
   - "peco"
-
-
-
-
+  - "ghq"
