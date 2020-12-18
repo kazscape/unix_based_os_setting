@@ -6,6 +6,7 @@ required_packages:
   - "peco"
   - "ghq"
   - "tmux"
+  - "hub"
 
 
 
