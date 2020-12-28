@@ -1,8 +1,8 @@
 ---
----
 brew_taps:
   - homebrew/core
-  - caskroom/cask
+  - homebrew/cask
+  - homebrew/cask-fonts
 
 brew_packages:
   - anyenv
@@ -16,7 +16,13 @@ brew_packages:
 
 brew_cask_packages:
   - alfred
+  - appcleaner
+  - bartender
+  - cheatsheet
   - google-chrome
   - google-japanese-ime
   - iterm2
+  - kindle
+  - skitch
   - visual-studio-code
+  - font-ricty-diminished
