@@ -21,7 +21,7 @@
     "{{ brew_packages }}"
 
 - name: Install homebrew cask packages
-  homebrew:
+  community.general.homebrew_cask:
     name: "{{ item }}"
     state: present
   loop:
