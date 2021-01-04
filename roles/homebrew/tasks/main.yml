@@ -26,3 +26,17 @@
     state: present
   loop:
     "{{ brew_cask_packages }}"
+
+- name: Install ricty diminished with powerline
+  community.general.homebrew_cask:
+    name: ricty
+    state: present
+    install_options: --with-powerline
+  when: ansible_os_family == "Darwin" 
+
+- name: Copy ricty fonts
+  shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+  args:
+    creates: ~/Library/Fonts/Ricty-Bold.ttf
+  when: ansible_os_family == "Darwin" 
+  notify: Update font cache
