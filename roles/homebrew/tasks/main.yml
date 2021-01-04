@@ -20,23 +20,24 @@
   loop:
     "{{ brew_packages }}"
 
-- name: Install homebrew cask packages
-  community.general.homebrew_cask:
-    name: "{{ item }}"
-    state: present
-  loop:
-    "{{ brew_cask_packages }}"
+- block:
+  - name: Install homebrew cask packages
+    community.general.homebrew_cask:
+      name: "{{ item }}"
+      state: present
+    loop:
+      "{{ brew_cask_packages }}"
 
-- name: Install ricty diminished with powerline
-  community.general.homebrew_cask:
-    name: ricty
-    state: present
-    install_options: --with-powerline
-  when: ansible_os_family == "Darwin" 
+  - name: Install ricty diminished with powerline
+    community.general.homebrew_cask:
+      name: ricty
+      state: present
+      install_options: --with-powerline
 
-- name: Copy ricty fonts
-  shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-  args:
-    creates: ~/Library/Fonts/Ricty-Bold.ttf
+  - name: Copy ricty fonts
+    shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+    args:
+      creates: ~/Library/Fonts/Ricty-Bold.ttf
+    notify: Update font cache
+  
   when: ansible_os_family == "Darwin" 
-  notify: Update font cache
