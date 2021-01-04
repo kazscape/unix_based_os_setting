@@ -10,7 +10,5 @@ brew_packages:
   - ghq
   - tmux
   - hub
+  - pipenv
   - azure-cli
-
-brew_cask_packages:
-  - 
