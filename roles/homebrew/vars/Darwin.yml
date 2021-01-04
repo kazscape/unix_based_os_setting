@@ -13,6 +13,7 @@ brew_packages:
   - tmux
   - hub
   - azure-cli
+  - mas
 
 brew_cask_packages:
   - alfred

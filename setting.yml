@@ -16,3 +16,6 @@
       tags: python
     - role: fish
       tags: fish
+    - role: mas
+      tags: mas
+      when: ansible_os_family == "Darwin"
