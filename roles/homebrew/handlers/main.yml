@@ -1,0 +1,3 @@
+---
+- name: Update font cache
+  shell: fc-cache -vf

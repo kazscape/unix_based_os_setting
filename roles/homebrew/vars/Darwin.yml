@@ -2,7 +2,7 @@
 brew_taps:
   - homebrew/core
   - homebrew/cask
-  - homebrew/cask-fonts
+  - sanemat/font
 
 brew_packages:
   - anyenv
@@ -25,4 +25,3 @@ brew_cask_packages:
   - kindle
   - skitch
   - visual-studio-code
-  - font-ricty-diminished
