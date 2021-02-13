@@ -1,0 +1,8 @@
+- name: set osx defaults
+  community.general.osx_defaults:
+    domain: "{{ item.domain }}"
+    host: "{{ item.host | default(omit) }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop: "{{ defaults_settings }}"

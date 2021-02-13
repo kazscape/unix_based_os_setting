@@ -1,0 +1,69 @@
+---
+defaults_settings:
+  # General
+  ## Appearance
+  - domain: NSGlobalDomain
+    key: AppleInterfaceStyle
+    type: string
+    value: Dark
+  
+  # Dock & Menu Bar
+  ## Dock
+  - domain: com.apple.dock
+    key: tilesize
+    type: float
+    value: 40
+  - domain: com.apple.dock
+    key: magnification
+    type: int
+    value: 1
+  - domain: com.apple.dock
+    key: largesize
+    type: float
+    value: 80
+  - domain: com.apple.dock
+    key: autohide
+    type: int
+    value: 1
+
+  # Language & Region
+  ## Preferred languages
+  - domain: NSGlobalDomain
+    key: AppleLanguages
+    type: array
+    value:
+      - "en-JP"
+      - "ja-JP"
+  - domain: NSGlobalDomain
+    key: AppleLocale
+    type: string
+    value: "en_JP"
+
+  # Accessibility
+  ## Trackpad Options
+  - domain: com.apple.AppleMultitouchTrackpad
+    key: Dragging
+    type: int
+    value: 0
+  - domain: com.apple.AppleMultitouchTrackpad
+    key: TrackpadThreeFingerDrag
+    type: int
+    value: 1
+  - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: TrackpadThreeFingerDrag
+    type: int
+    value: 1
+  - domain: NSGlobalDomain
+    host: currentHost
+    key: com.apple.trackpad.threeFingerDragGesture
+    type: int
+    value: 1
+
+  # Keyboard
+  ## keyboard
+  - domain: NSGlobalDomain
+    key: com.apple.keyboard.fnState
+    type: int
+    value: 1
+
+

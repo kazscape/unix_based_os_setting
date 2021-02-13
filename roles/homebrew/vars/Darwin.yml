@@ -26,3 +26,4 @@ brew_cask_packages:
   - kindle
   - skitch
   - visual-studio-code
+  - cyberduck

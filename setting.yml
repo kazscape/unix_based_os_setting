@@ -19,3 +19,6 @@
     - role: mas
       tags: mas
       when: ansible_os_family == "Darwin"
+    - role: macos
+      tags: macos
+      when: ansible_os_family == "Darwin"

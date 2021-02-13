@@ -22,14 +22,3 @@
 - name: Set fact of python interpreter
   set_fact: ansible_python_interpreter="{{ python_path.stdout }}"
   when: result.changed == true
-
-- name: Upgrade pip
-  pip:
-    name: pip
-    state: latest
-
-- name: Install python module
-  pip: 
-    name: "{{ item }}"
-  loop:
-    "{{ required_module }}"
