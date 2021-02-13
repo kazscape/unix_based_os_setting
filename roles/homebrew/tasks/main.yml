@@ -29,7 +29,7 @@
       "{{ brew_cask_packages }}"
 
   - name: Install ricty diminished with powerline
-    community.general.homebrew_cask:
+    homebrew:
       name: ricty
       state: present
       install_options: --with-powerline

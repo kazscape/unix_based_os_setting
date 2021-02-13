@@ -12,4 +12,6 @@ apps:
   - { name: "Pages", id: "409201541" }  
   - { name: "PopClip", id: "445189367" }
   - { name: "BetterSnapTool", id: "417375580" }
-  - { name: "Witch", id: "412485838" }  
+  - { name: "Witch", id: "412485838" } 
+  - { name: "ToyViewer", id: "414298354" }  
+  - { name: "Affinity Photo", id: "824183456" }  
