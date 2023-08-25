@@ -2,7 +2,7 @@
 brew_taps:
   - homebrew/core
   - homebrew/cask
-  - sanemat/font
+  - homebrew/cask-fonts
 
 brew_packages:
   - anyenv
@@ -12,16 +12,13 @@ brew_packages:
   - ghq
   - tmux
   - hub
-  - azure-cli
 
 brew_cask_packages:
   - alfred
   - appcleaner
   - bartender
-  - cheatsheet
-  - google-chrome
-  - google-japanese-ime
   - iterm2
   - kindle
-  - skitch
   - visual-studio-code
+  - docker
+  - keyboardcleantool

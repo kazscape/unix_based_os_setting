@@ -1,6 +1,5 @@
 ---
-required_version: 3.10.7
+required_version: 3.11.4
 required_module:
   - "ansible"
-  - "azure-cli"
   - "powerline-status"

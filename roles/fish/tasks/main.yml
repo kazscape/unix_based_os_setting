@@ -40,7 +40,7 @@
     dest: "{{ home_dir }}/.config/fish/config.fish"
     create: yes
     marker: "# {mark} ANSIBLE MANAGED BLOCK anyenv"
-    block: eval (anyenv init - | source)
+    block: eval "$(anyenv init - fish)"
   when: anyenv_path.rc == 0
 
 - name: Make fish function directory
