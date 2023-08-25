@@ -28,16 +28,9 @@
     loop:
       "{{ brew_cask_packages }}"
 
-  - name: Install ricty diminished with powerline
+  - name: Install fira code font
     community.general.homebrew_cask:
-      name: ricty
+      name: font-fira-code
       state: present
-      install_options: --with-powerline
-
-  - name: Copy ricty fonts
-    shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-    args:
-      creates: ~/Library/Fonts/Ricty-Bold.ttf
-    notify: Update font cache
   
   when: ansible_os_family == "Darwin" 
