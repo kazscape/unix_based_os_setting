@@ -22,3 +22,4 @@ brew_cask_packages:
   - visual-studio-code
   - docker
   - keyboardcleantool
+  - cheatsheet
