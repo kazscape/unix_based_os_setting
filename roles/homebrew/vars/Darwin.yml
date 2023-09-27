@@ -24,6 +24,6 @@ brew_cask_packages:
   - keyboardcleantool
   - cheatsheet
   - google-japanese-ime
-  - cleanmymac
   - 1password
   - karabiner-elements
+  - brave-browser
