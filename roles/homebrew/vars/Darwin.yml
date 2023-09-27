@@ -23,3 +23,7 @@ brew_cask_packages:
   - docker
   - keyboardcleantool
   - cheatsheet
+  - google-japanese-ime
+  - cleanmymac
+  - 1password
+  - karabiner-elements
