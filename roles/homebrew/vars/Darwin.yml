@@ -25,3 +25,4 @@ brew_cask_packages:
   - 1password
   - karabiner-elements
   - brave-browser
+  - postman
