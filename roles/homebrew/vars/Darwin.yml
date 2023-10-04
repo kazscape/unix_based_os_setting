@@ -26,3 +26,5 @@ brew_cask_packages:
   - brave-browser
   - postman
   - alt-tab
+  - warp
+  - rectangle
