@@ -21,8 +21,8 @@ brew_cask_packages:
   - docker
   - keyboardcleantool
   - cheatsheet
-  - google-japanese-ime
   - 1password
   - karabiner-elements
   - brave-browser
   - postman
+  - alt-tab
