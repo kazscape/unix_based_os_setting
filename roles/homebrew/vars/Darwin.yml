@@ -28,3 +28,4 @@ brew_cask_packages:
   - alt-tab
   - warp
   - rectangle
+  - hhkb
