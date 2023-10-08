@@ -29,3 +29,5 @@ brew_cask_packages:
   - warp
   - rectangle
   - hhkb
+  - raycast
+  - menubarx
