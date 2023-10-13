@@ -29,7 +29,7 @@
     state: latest
 
 - name: Install python module
-  pip: 
+  pip:
     name: "{{ item }}"
   loop:
     "{{ required_module }}"

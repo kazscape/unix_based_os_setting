@@ -1,5 +1,5 @@
 ---
-required_version: 3.11.4
+required_version: 3.12.0
 required_module:
   - "ansible"
   - "powerline-status"
