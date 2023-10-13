@@ -25,3 +25,18 @@
     block: |
       export PATH="$HOME/.anyenv/bin:$PATH"
       eval "$(anyenv init -)"
+
+- name: Make anyenv-update directory
+  file:
+    path: "$(anyenv root)/plugins"
+    state: directory
+    mode: 0755
+
+- name: register anyenv_update_stat
+  stat:
+    path: $(anyenv root)/plugins/anyenv-update/bin/anyenv-update
+  register: anyenv_update_stat
+
+- name: Install anyenv-update
+  shell: /bin/bash -lc "git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update"
+  when: anyenv_update_stat.stat.exists
