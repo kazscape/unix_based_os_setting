@@ -26,6 +26,7 @@
 - name: Upgrade pip
   pip:
     name: pip
+    executable: pip3
     state: latest
 
 - name: Install python module

@@ -12,7 +12,6 @@ brew_packages:
   - hub
 
 brew_cask_packages:
-  - alfred
   - appcleaner
   - bartender
   - iterm2
@@ -20,7 +19,7 @@ brew_cask_packages:
   - visual-studio-code
   - docker
   - keyboardcleantool
-  - cheatsheet
+  - keyclu
   - 1password
   - karabiner-elements
   - brave-browser
