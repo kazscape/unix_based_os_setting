@@ -10,6 +10,21 @@
     PATH: "{{ home_dir }}/.anyenv/bin:{{ lookup('env', 'PATH') }}"
   when: anyenv_install_path.stat.exists == false
 
+- name: Make anyenv-update directory
+  file:
+    path: "$(anyenv root)/plugins"
+    state: directory
+    mode: 0755
+
+- name: register anyenv_update_stat
+  stat:
+    path: $(anyenv root)/plugins/anyenv-update/bin/anyenv-update
+  register: anyenv_update_stat
+
+- name: Install anyenv-update
+  shell: /bin/bash -lc "git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update"
+  when: anyenv_update_stat.stat.exists
+
 - name: Install environment
   shell: "anyenv install -s {{ item }}"
   environment:
@@ -25,18 +40,3 @@
     block: |
       export PATH="$HOME/.anyenv/bin:$PATH"
       eval "$(anyenv init -)"
-
-- name: Make anyenv-update directory
-  file:
-    path: "$(anyenv root)/plugins"
-    state: directory
-    mode: 0755
-
-- name: register anyenv_update_stat
-  stat:
-    path: $(anyenv root)/plugins/anyenv-update/bin/anyenv-update
-  register: anyenv_update_stat
-
-- name: Install anyenv-update
-  shell: /bin/bash -lc "git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update"
-  when: anyenv_update_stat.stat.exists
