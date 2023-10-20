@@ -1,0 +1,27 @@
+---
+- name: Stat volta_path
+  stat:
+    path: "{{ home_dir }}/.volta/bin"
+  register: volta_install_path
+
+- name: Install volta
+  command: /bin/bash -lc "curl https://get.volta.sh | bash -s -- --skip-setup"
+  register: result
+  when: volta_install_path.stat.exists == false
+
+- name: Add volta config in fish config file
+  blockinfile:
+    dest: "{{ home_dir }}/.config/fish/config.fish"
+    create: yes
+    marker: "# {mark} ANSIBLE MANAGED BLOCK volta"
+    block: |
+      set -gx VOLTA_HOME "$HOME/.volta"
+
+- name: Stat volta_path
+  stat:
+    path: "{{ home_dir }}/.volta/bin"
+  register: volta_install_path
+
+- name: Install node
+  command: /bin/bash -lc "{{ home_dir }}/.volta/bin/volta install node"
+  when: volta_install_path.stat.exists == true
