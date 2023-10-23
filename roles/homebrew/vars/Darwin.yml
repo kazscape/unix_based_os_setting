@@ -31,3 +31,4 @@ brew_cask_packages:
   - raycast
   - menubarx
   - miro
+  - mysqlworkbench
