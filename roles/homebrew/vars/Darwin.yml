@@ -10,6 +10,7 @@ brew_packages:
   - ghq
   - tmux
   - hub
+  - awscli
 
 brew_cask_packages:
   - appcleaner
