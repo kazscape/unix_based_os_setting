@@ -33,3 +33,4 @@ brew_cask_packages:
   - menubarx
   - miro
   - mysqlworkbench
+  - cron
