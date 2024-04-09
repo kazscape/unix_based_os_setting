@@ -12,7 +12,7 @@
 
 - name: Make anyenv-update directory
   file:
-    path: "{{ home_dir }}/.anyenv/plugins"
+    path: "{{ home_dir }}/.anyenv/plugins/anyenv-update"
     state: directory
     mode: 0755
 
@@ -23,7 +23,7 @@
 
 - name: Install anyenv-update
   shell: /bin/bash -lc "git clone https://github.com/znz/anyenv-update.git {{ home_dir }}/.anyenv/plugins/anyenv-update"
-  when: anyenv_update_stat.stat.exists
+  when: anyenv_update_stat.stat.exists == false
 
 - name: Install environment
   shell: "anyenv install -s {{ item }}"
