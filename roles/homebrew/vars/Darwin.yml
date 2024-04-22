@@ -35,3 +35,4 @@ brew_cask_packages:
   - miro
   - mysqlworkbench
   - cron
+  - intellij-idea
