@@ -12,6 +12,7 @@ brew_packages:
   - hub
   - awscli
   - mysql
+  - poetry
 
 brew_cask_packages:
   - appcleaner
@@ -36,3 +37,4 @@ brew_cask_packages:
   - mysqlworkbench
   - cron
   - intellij-idea
+  - cursor
