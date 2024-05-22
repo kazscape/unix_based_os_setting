@@ -38,3 +38,4 @@ brew_cask_packages:
   - cron
   - intellij-idea
   - cursor
+  - session-manager-plugin
