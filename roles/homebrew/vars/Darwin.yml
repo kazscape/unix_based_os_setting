@@ -13,6 +13,7 @@ brew_packages:
   - awscli
   - mysql
   - poetry
+  - gh
 
 brew_cask_packages:
   - appcleaner
