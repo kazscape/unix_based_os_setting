@@ -30,18 +30,18 @@
     block: "eval ({{ homebrew_path.stdout }} shellenv)"
   when: homebrew_path.rc == 0
 
-- name: register anyenv_path
-  command: which anyenv
-  register: anyenv_path
-  failed_when: false
+#- name: register anyenv_path
+#  command: which anyenv
+#  register: anyenv_path
+#  failed_when: false
 
-- name: Add anyenv config in fish config file
-  blockinfile:
-    dest: "{{ home_dir }}/.config/fish/config.fish"
-    create: yes
-    marker: "# {mark} ANSIBLE MANAGED BLOCK anyenv"
-    block: eval "$(anyenv init - fish)"
-  when: anyenv_path.rc == 0
+#- name: Add anyenv config in fish config file
+#  blockinfile:
+#    dest: "{{ home_dir }}/.config/fish/config.fish"
+#    create: yes
+#    marker: "# {mark} ANSIBLE MANAGED BLOCK anyenv"
+#    block: eval "$(anyenv init - fish)"
+#  when: anyenv_path.rc == 0
 
 - name: Make fish function directory
   file:
