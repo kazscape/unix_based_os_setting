@@ -14,6 +14,7 @@ brew_packages:
   - mysql
   - poetry
   - gh
+  - hatch
 
 brew_cask_packages:
   - appcleaner
@@ -29,7 +30,6 @@ brew_cask_packages:
   - brave-browser
   - postman
   - alt-tab
-  - warp
   - rectangle
   - hhkb
   - raycast
