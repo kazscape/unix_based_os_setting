@@ -1,12 +1,12 @@
 - name: Add the OS specific variables
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: Install homebrew taps
-  homebrew_tap:
-    name: "{{ item }}"
-    state: present
-  loop:
-    "{{ brew_taps }}"
+#- name: Install homebrew taps
+#  homebrew_tap:
+#    name: "{{ item }}"
+#    state: present
+#  loop:
+#    "{{ brew_taps }}"
 
 - name: Update homebrew and upgrade all packages
   homebrew:

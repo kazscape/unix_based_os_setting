@@ -1,9 +1,8 @@
 ---
-brew_taps:
-  - homebrew/cask-fonts
+#brew_taps:
+#  - homebrew/cask-fonts
 
 brew_packages:
-  - anyenv
   - tree
   - fish
   - peco
@@ -12,9 +11,9 @@ brew_packages:
   - hub
   - awscli
   - mysql
-  - poetry
   - gh
   - hatch
+  - volta
 
 brew_cask_packages:
   - appcleaner
