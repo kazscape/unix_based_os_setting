@@ -2,78 +2,68 @@
 - name: Register fish_path
   command: which fish
   register: fish_path
-  changed_when: fish_path.rc != 0
+  # changed_when: fish_path.rc != 0
 
-- name: Add fish to shells
-  lineinfile:
-    path: "/etc/shells"
-    line: "{{ fish_path.stdout }}"
-    state: present
-  become: yes
+- block:
+  - name: Add fish to shells
+    lineinfile:
+      path: "/etc/shells"
+      line: "{{ fish_path.stdout }}"
+      state: present
+    become: yes
 
-- name: Make fish config directory
-  file:
-    path: "{{ home_dir }}/.config/fish"
-    state: directory
-    mode: 0755
+  - name: Make fish config directory
+    file:
+      path: "{{ home_dir }}/.config/fish"
+      state: directory
+      mode: 0755
 
-- name: register homebrew_path
-  command: which brew
-  register: homebrew_path
-  failed_when: false
+  - name: register homebrew_path
+    command: which brew
+    register: homebrew_path
+    failed_when: false
 
-- name: Add homebrew config in fish config file
-  blockinfile:
-    dest: "{{ home_dir }}/.config/fish/config.fish"
-    create: yes
-    marker: "# {mark} ANSIBLE MANAGED BLOCK Hombrew"
-    block: "eval ({{ homebrew_path.stdout }} shellenv)"
-  when: homebrew_path.rc == 0
+  - name: Add homebrew config in fish config file
+    blockinfile:
+      dest: "{{ home_dir }}/.config/fish/config.fish"
+      create: yes
+      marker: "# {mark} ANSIBLE MANAGED BLOCK Hombrew"
+      block: "eval ({{ homebrew_path.stdout }} shellenv)"
+    when: homebrew_path.rc == 0
 
-#- name: register anyenv_path
-#  command: which anyenv
-#  register: anyenv_path
-#  failed_when: false
+  - name: Make fish function directory
+    file:
+      path: "{{ home_dir }}/.config/fish/functions"
+      state: directory
+      mode: 0755
 
-#- name: Add anyenv config in fish config file
-#  blockinfile:
-#    dest: "{{ home_dir }}/.config/fish/config.fish"
-#    create: yes
-#    marker: "# {mark} ANSIBLE MANAGED BLOCK anyenv"
-#    block: eval "$(anyenv init - fish)"
-#  when: anyenv_path.rc == 0
+  - name: Install fisher 
+    get_url:
+      url: "https://git.io/fisher"
+      dest: "{{ home_dir }}/.config/fish/functions/fisher.fish"
 
-- name: Make fish function directory
-  file:
-    path: "{{ home_dir }}/.config/fish/functions"
-    state: directory
-    mode: 0755
+  - name: Install fisher packages
+    shell: fish -lc "fisher install {{ fisher_packages | join(' ') }}"
 
-- name: Install fisher 
-  get_url:
-    url: "https://git.io/fisher"
-    dest: "{{ home_dir }}/.config/fish/functions/fisher.fish"
+  - name: Add peco config in fish config file
+    blockinfile:
+      dest: "{{ home_dir }}/.config/fish/config.fish"
+      create: yes
+      marker: "# {mark} ANSIBLE MANAGED BLOCK peco"
+      block: |
+        function fish_user_key_bindings
+          bind \cr peco_select_history
+        end
 
-- name: Install fisher packages
-  shell: fish -lc "fisher install {{ fisher_packages | join(' ') }}"
+  - name: Add ghq config in fish config file
+    blockinfile:
+      dest: "{{ home_dir }}/.config/fish/config.fish"
+      create: yes
+      marker: "# {mark} ANSIBLE MANAGED BLOCK ghq"
+      block: set GHQ_SELECTOR peco
 
-- name: Add peco config in fish config file
-  blockinfile:
-    dest: "{{ home_dir }}/.config/fish/config.fish"
-    create: yes
-    marker: "# {mark} ANSIBLE MANAGED BLOCK peco"
-    block: |
-      function fish_user_key_bindings
-        bind \cr peco_select_history
-      end
+  - name: Change default shell
+    user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
+    become: yes
 
-- name: Add ghq config in fish config file
-  blockinfile:
-    dest: "{{ home_dir }}/.config/fish/config.fish"
-    create: yes
-    marker: "# {mark} ANSIBLE MANAGED BLOCK ghq"
-    block: set GHQ_SELECTOR peco
-
-- name: Change default shell
-  user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
-  become: yes
+  when: fish_path.rc == 0
