@@ -4,9 +4,17 @@
 
 brew_packages:
   - tree
-  - fish
-  - peco
-  - ghq
+  - zsh
+  - powerlevel10k
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - eza
+  - zoxide
+  - fd
+  - fzf
+  - bat
+  - thefuck
+  - neovim
   - tmux
   - awscli
   - mysql
@@ -38,4 +46,5 @@ brew_cask_packages:
   - cron
   - intellij-idea
   - cursor
+  - font-hack-nerd-font
   - session-manager-plugin
