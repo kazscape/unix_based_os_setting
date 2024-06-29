@@ -3,3 +3,6 @@ fisher_packages:
   - oh-my-fish/theme-bobthefish
   - oh-my-fish/plugin-peco
   - decors/fish-ghq
+  - jethrokuan/z
+  - jethrokuan/fzf
+  - 0rax/fish-bd

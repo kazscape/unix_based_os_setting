@@ -5,11 +5,27 @@
   # changed_when: fish_path.rc != 0
 
 - block:
+  - name: Check if fish_path is already in /etc/shells
+    command: grep -Fxq "{{ fish_path.stdout }}" /etc/shells
+    register: shell_exists
+    changed_when: false
+    failed_when: false
+    ignore_errors: true
+
   - name: Add fish to shells
     lineinfile:
       path: "/etc/shells"
       line: "{{ fish_path.stdout }}"
       state: present
+    become: yes
+    when: shell_exists.rc != 0
+
+#  - name: Change default shell
+#    user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
+#    become: yes
+
+  - name: Set fish as the default shell
+    ansible.builtin.command: chsh -s "{{ fish_path.stdout }}" "{{ lookup('env', 'USER') }}"
     become: yes
 
   - name: Make fish config directory
@@ -18,18 +34,18 @@
       state: directory
       mode: 0755
 
-  - name: register homebrew_path
-    command: which brew
-    register: homebrew_path
-    failed_when: false
+  #- name: register homebrew_path
+  #  command: which brew
+  #  register: homebrew_path
+  #  failed_when: false
 
-  - name: Add homebrew config in fish config file
-    blockinfile:
-      dest: "{{ home_dir }}/.config/fish/config.fish"
-      create: yes
-      marker: "# {mark} ANSIBLE MANAGED BLOCK Hombrew"
-      block: "eval ({{ homebrew_path.stdout }} shellenv)"
-    when: homebrew_path.rc == 0
+  #- name: Add homebrew config in fish config file
+  #  blockinfile:
+  #    dest: "{{ home_dir }}/.config/fish/config.fish"
+  #    create: yes
+  #    marker: "# {mark} ANSIBLE MANAGED BLOCK Hombrew"
+  #    block: "eval ({{ homebrew_path.stdout }} shellenv)"
+  #  when: homebrew_path.rc == 0
 
   - name: Make fish function directory
     file:
@@ -45,25 +61,25 @@
   - name: Install fisher packages
     shell: fish -lc "fisher install {{ fisher_packages | join(' ') }}"
 
-  - name: Add peco config in fish config file
-    blockinfile:
-      dest: "{{ home_dir }}/.config/fish/config.fish"
-      create: yes
-      marker: "# {mark} ANSIBLE MANAGED BLOCK peco"
-      block: |
-        function fish_user_key_bindings
-          bind \cr peco_select_history
-        end
+  #- name: Add peco config in fish config file
+  #  blockinfile:
+  #    dest: "{{ home_dir }}/.config/fish/config.fish"
+  #    create: yes
+  #    marker: "# {mark} ANSIBLE MANAGED BLOCK peco"
+  #    block: |
+  #      function fish_user_key_bindings
+  #        bind \cr peco_select_history
+  #      end
 
-  - name: Add ghq config in fish config file
-    blockinfile:
-      dest: "{{ home_dir }}/.config/fish/config.fish"
-      create: yes
-      marker: "# {mark} ANSIBLE MANAGED BLOCK ghq"
-      block: set GHQ_SELECTOR peco
+  #- name: Add ghq config in fish config file
+  #  blockinfile:
+  #    dest: "{{ home_dir }}/.config/fish/config.fish"
+  #    create: yes
+  #    marker: "# {mark} ANSIBLE MANAGED BLOCK ghq"
+  #    block: set GHQ_SELECTOR peco
 
-  - name: Change default shell
-    user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
-    become: yes
+#  - name: Change default shell
+#    user: name="{{ lookup('env', 'USER') }}" shell="{{ fish_path.stdout }}"
+#    become: yes
 
   when: fish_path.rc == 0
