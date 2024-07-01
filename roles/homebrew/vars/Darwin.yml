@@ -27,7 +27,6 @@ brew_cask_packages:
   - bartender
   - iterm2
   - alacritty
-  - kindle
   - visual-studio-code
   - docker
   - keyboardcleantool
