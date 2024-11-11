@@ -32,5 +32,10 @@
     community.general.homebrew_cask:
       name: font-fira-code
       state: present
-  
+
+- name: Upgrade all casks with greedy option
+  community.general.homebrew_cask:
+    upgrade_all: true
+    greedy: true
+
   when: ansible_os_family == "Darwin" 
