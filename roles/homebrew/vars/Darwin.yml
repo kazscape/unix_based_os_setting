@@ -15,9 +15,13 @@ brew_packages:
   - bat
   - thefuck
   - neovim
+  - ripgrep
+  - lazygit
   - tmux
   - awscli
   - mysql
+  - git
+  - git-gui
   - gh
   - hatch
   - volta
@@ -47,3 +51,4 @@ brew_cask_packages:
   - cursor
   - font-hack-nerd-font
   - session-manager-plugin
+  - mitmproxy
