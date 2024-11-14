@@ -1,13 +1,6 @@
 - name: Add the OS specific variables
   include_vars: "{{ ansible_os_family }}.yml"
 
-#- name: Install homebrew taps
-#  homebrew_tap:
-#    name: "{{ item }}"
-#    state: present
-#  loop:
-#    "{{ brew_taps }}"
-
 - name: Update homebrew and upgrade all packages
   homebrew:
     update_homebrew: yes
@@ -17,25 +10,23 @@
   homebrew:
     name: "{{ item }}"
     state: present
-  loop:
-    "{{ brew_packages }}"
+  loop: "{{ brew_packages }}"
 
 - block:
-  - name: Install homebrew cask packages
-    community.general.homebrew_cask:
-      name: "{{ item }}"
-      state: present
-    loop:
-      "{{ brew_cask_packages }}"
+    - name: Install homebrew cask packages
+      community.general.homebrew_cask:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ brew_cask_packages }}"
 
-  - name: Install fira code font
-    community.general.homebrew_cask:
-      name: font-fira-code
-      state: present
+    - name: Install fira code font
+      community.general.homebrew_cask:
+        name: font-fira-code
+        state: present
 
 - name: Upgrade all casks with greedy option
   community.general.homebrew_cask:
     upgrade_all: true
     greedy: true
 
-  when: ansible_os_family == "Darwin" 
+  when: ansible_os_family == "Darwin"
