@@ -3,63 +3,60 @@ brew_taps:
   - FelixKratz/formulae
 
 brew_packages:
-  - awscli
-  - bat
-  - eza
-  - fd
-  - ffmpeg
-  - ffmpegthumbnailer
-  - fzf
-  - gh
-  - git
-  - git-gui
-  - hatch
-  - imagemagick
-  - jq
-  - lazygit
-  - lua
-  - mysql
-  - neovim
-  - nowplaying-cli
-  - openjdk
-  - poppler
-  - powerlevel10k
-  - ripgrep
-  - sevenzip
-  - switchaudio-osx
-  - thefuck
   - tree
-  - volta
-  - yazi
-  - zoxide
   - zsh
+  - powerlevel10k
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+  - eza
+  - bat
+  - thefuck
+  - neovim
+  - lazygit
+  - yazi
+  - ffmpegthumbnailer
+  - ffmpeg
+  - sevenzip
+  - jq
+  - poppler
+  - fd
+  - ripgrep
+  - fzf
+  - zoxide
+  - imagemagick
+  - awscli
+  - mysql
+  - git
+  - git-gui
+  - gh
+  - hatch
+  - volta
+  - lua
+  - switchaudio-osx
+  - nowplaying-cli
 
 brew_cask_packages:
-  - 1password
-  - alt-tab
   - appcleaner
   - bartender
-  - brave-browser
-  - cursor
-  - cron
+  - visual-studio-code
   - docker
-  - font-hack-nerd-font
-  - font-symbols-only-nerd-font
-  - google-chrome
-  - intellij-idea-ce
   - keyboardcleantool
   - keyclu
+  - 1password
   - karabiner-elements
+  - brave-browser
+  - google-chrome
+  - postman
+  - alt-tab
+  - raycast
   - miro
   - mysqlworkbench
-  - nikitabobko/tap/aerospace
-  - notion
-  - postman
-  - raycast
-  - slack
+  - cron
+  - intellij-idea
+  - cursor
+  - font-hack-nerd-font
+  - font-symbols-only-nerd-font
   - session-manager-plugin
-  - visual-studio-code
-  - vlc
   - wezterm
+  - nikitabobko/tap/aerospace
+  - vlc
