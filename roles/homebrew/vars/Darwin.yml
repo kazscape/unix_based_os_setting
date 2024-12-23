@@ -9,14 +9,21 @@ brew_packages:
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - eza
-  - zoxide
-  - fd
-  - fzf
   - bat
   - thefuck
   - neovim
-  - ripgrep
   - lazygit
+  - yazi
+  - ffmpegthumbnailer
+  - ffmpeg
+  - sevenzip
+  - jq
+  - poppler
+  - fd
+  - ripgrep
+  - fzf
+  - zoxide
+  - imagemagick
   - awscli
   - mysql
   - git
@@ -48,6 +55,7 @@ brew_cask_packages:
   - intellij-idea
   - cursor
   - font-hack-nerd-font
+  - font-symbols-only-nerd-font
   - session-manager-plugin
   - wezterm
   - nikitabobko/tap/aerospace
