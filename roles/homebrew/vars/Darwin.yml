@@ -3,60 +3,60 @@ brew_taps:
   - FelixKratz/formulae
 
 brew_packages:
+  - awscli
+  - bat
+  - eza
+  - fd
+  - ffmpeg
+  - ffmpegthumbnailer
+  - fzf
+  - gh
+  - git
+  - hatch
+  - git-gui
+  - imagemagick
+  - jq
+  - lazygit
+  - lua
+  - mysql
+  - neovim
+  - nowplaying-cli
+  - sevenzip
+  - switchaudio-osx
   - tree
-  - zsh
+  - poppler
   - powerlevel10k
+  - ripgrep
+  - thefuck
+  - volta
+  - yazi
+  - zoxide
+  - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
-  - eza
-  - bat
-  - thefuck
-  - neovim
-  - lazygit
-  - yazi
-  - ffmpegthumbnailer
-  - ffmpeg
-  - sevenzip
-  - jq
-  - poppler
-  - fd
-  - ripgrep
-  - fzf
-  - zoxide
-  - imagemagick
-  - awscli
-  - mysql
-  - git
-  - git-gui
-  - gh
-  - hatch
-  - volta
-  - lua
-  - switchaudio-osx
-  - nowplaying-cli
 
 brew_cask_packages:
+  - 1password
+  - alt-tab
   - appcleaner
   - bartender
-  - visual-studio-code
-  - docker
-  - keyboardcleantool
-  - keyclu
-  - 1password
-  - karabiner-elements
   - brave-browser
-  - google-chrome
-  - postman
-  - alt-tab
-  - raycast
-  - miro
-  - mysqlworkbench
   - cron
-  - intellij-idea
   - cursor
+  - docker
   - font-hack-nerd-font
   - font-symbols-only-nerd-font
   - session-manager-plugin
-  - wezterm
+  - google-chrome
+  - intellij-idea
+  - keyboardcleantool
+  - keyclu
+  - karabiner-elements
+  - miro
+  - mysqlworkbench
   - nikitabobko/tap/aerospace
+  - postman
+  - raycast
+  - visual-studio-code
   - vlc
+  - wezterm
