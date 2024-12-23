@@ -1,6 +1,6 @@
 ---
-#brew_taps:
-#  - homebrew/cask-fonts
+brew_taps:
+  - FelixKratz/formulae
 
 brew_packages:
   - tree
@@ -17,7 +17,6 @@ brew_packages:
   - neovim
   - ripgrep
   - lazygit
-  - tmux
   - awscli
   - mysql
   - git
@@ -25,12 +24,13 @@ brew_packages:
   - gh
   - hatch
   - volta
+  - lua
+  - switchaudio-osx
+  - nowplaying-cli
 
 brew_cask_packages:
   - appcleaner
   - bartender
-  - iterm2
-  - alacritty
   - visual-studio-code
   - docker
   - keyboardcleantool
@@ -41,18 +41,14 @@ brew_cask_packages:
   - google-chrome
   - postman
   - alt-tab
-  - rectangle
   - raycast
-  - menubarx
   - miro
   - mysqlworkbench
   - cron
   - intellij-idea
   - cursor
   - font-hack-nerd-font
-  - font-meslo-lg-nerd-font
   - session-manager-plugin
-  - mitmproxy
   - wezterm
   - nikitabobko/tap/aerospace
   - vlc

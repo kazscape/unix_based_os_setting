@@ -6,6 +6,12 @@
     update_homebrew: yes
     upgrade_all: yes
 
+- name: homebrew tap
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ brew_taps }}"
+
 - name: Install homebrew packages
   homebrew:
     name: "{{ item }}"
@@ -18,11 +24,6 @@
         name: "{{ item }}"
         state: present
       loop: "{{ brew_cask_packages }}"
-
-    - name: Install fira code font
-      community.general.homebrew_cask:
-        name: font-fira-code
-        state: present
 
 - name: Upgrade all casks with greedy option
   community.general.homebrew_cask:
