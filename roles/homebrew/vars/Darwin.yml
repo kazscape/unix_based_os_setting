@@ -3,60 +3,63 @@ brew_taps:
   - FelixKratz/formulae
 
 brew_packages:
-  - tree
-  - zsh
-  - powerlevel10k
-  - zsh-autosuggestions
-  - zsh-syntax-highlighting
-  - eza
-  - bat
-  - thefuck
-  - neovim
-  - lazygit
-  - yazi
-  - ffmpegthumbnailer
-  - ffmpeg
-  - sevenzip
-  - jq
-  - poppler
-  - fd
-  - ripgrep
-  - fzf
-  - zoxide
-  - imagemagick
   - awscli
-  - mysql
+  - bat
+  - eza
+  - fd
+  - ffmpeg
+  - ffmpegthumbnailer
+  - fzf
+  - gh
   - git
   - git-gui
-  - gh
   - hatch
-  - volta
+  - imagemagick
+  - jq
+  - lazygit
   - lua
-  - switchaudio-osx
+  - mysql
+  - neovim
   - nowplaying-cli
+  - openjdk
+  - poppler
+  - powerlevel10k
+  - ripgrep
+  - sevenzip
+  - switchaudio-osx
+  - thefuck
+  - tree
+  - volta
+  - yazi
+  - zoxide
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 brew_cask_packages:
+  - 1password
+  - alt-tab
   - appcleaner
   - bartender
-  - visual-studio-code
-  - docker
-  - keyboardcleantool
-  - keyclu
-  - 1password
-  - karabiner-elements
   - brave-browser
-  - google-chrome
-  - postman
-  - alt-tab
-  - raycast
-  - miro
-  - mysqlworkbench
-  - cron
-  - intellij-idea
   - cursor
+  - cron
+  - docker
   - font-hack-nerd-font
   - font-symbols-only-nerd-font
-  - session-manager-plugin
-  - wezterm
+  - google-chrome
+  - intellij-idea-ce
+  - keyboardcleantool
+  - keyclu
+  - karabiner-elements
+  - miro
+  - mysqlworkbench
   - nikitabobko/tap/aerospace
+  - notion
+  - postman
+  - raycast
+  - slack
+  - session-manager-plugin
+  - visual-studio-code
   - vlc
+  - wezterm
