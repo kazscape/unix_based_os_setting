@@ -55,6 +55,7 @@ brew_cask_packages:
   - miro
   - mysqlworkbench
   - nikitabobko/tap/aerospace
+  - pucharm-ce
   - postman
   - raycast
   - visual-studio-code
