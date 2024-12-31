@@ -12,6 +12,7 @@ brew_packages:
   - fzf
   - gh
   - git
+  - git-filter-repo
   - hatch
   - git-gui
   - imagemagick
