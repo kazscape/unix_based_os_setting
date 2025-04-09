@@ -21,9 +21,7 @@ brew_packages:
   - lua
   - mysql
   - neovim
-  - nowplaying-cli
   - sevenzip
-  - switchaudio-osx
   - tree
   - poppler
   - powerlevel10k
