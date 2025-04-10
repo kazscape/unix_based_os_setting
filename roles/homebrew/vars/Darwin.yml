@@ -21,9 +21,7 @@ brew_packages:
   - lua
   - mysql
   - neovim
-  - nowplaying-cli
   - sevenzip
-  - switchaudio-osx
   - tree
   - poppler
   - powerlevel10k
@@ -44,12 +42,10 @@ brew_cask_packages:
   - brave-browser
   - corretto@21
   - cron
-  - cursor
   - docker
   - font-hack-nerd-font
   - font-symbols-only-nerd-font
-  - session-manager-plugin
-  - google-chrome
+  - ghostty	
   - intellij-idea
   - keyboardcleantool
   - keyclu
@@ -61,6 +57,6 @@ brew_cask_packages:
   - pycharm-ce
   - postman
   - raycast
+  - session-manager-plugin
   - visual-studio-code
   - vlc
-  - wezterm
