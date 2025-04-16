@@ -42,18 +42,20 @@ brew_cask_packages:
   - brave-browser
   - corretto@21
   - cron
+  - dbeaver-community
   - docker
   - font-hack-nerd-font
   - font-symbols-only-nerd-font
-  - ghostty	
+  - ghostty
   - intellij-idea
+  - karabiner-elements
   - keyboardcleantool
   - keyclu
-  - karabiner-elements
   - miro
   - mysqlworkbench
   - nikitabobko/tap/aerospace
   - notion
+  - pgadmin4
   - pycharm-ce
   - postman
   - raycast
