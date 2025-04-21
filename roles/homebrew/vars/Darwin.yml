@@ -15,6 +15,7 @@ brew_packages:
   - git-filter-repo
   - hatch
   - git-gui
+  - httpie
   - imagemagick
   - jq
   - lazygit
