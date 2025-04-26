@@ -48,6 +48,7 @@ brew_cask_packages:
   - font-hack-nerd-font
   - font-symbols-only-nerd-font
   - session-manager-plugin
+  - ghostty
   - google-chrome
   - intellij-idea
   - keyboardcleantool
