@@ -15,15 +15,14 @@ brew_packages:
   - git-filter-repo
   - hatch
   - git-gui
+  - httpie
   - imagemagick
   - jq
   - lazygit
   - lua
   - mysql
   - neovim
-  - nowplaying-cli
   - sevenzip
-  - switchaudio-osx
   - tree
   - poppler
   - powerlevel10k
@@ -42,25 +41,26 @@ brew_cask_packages:
   - appcleaner
   - bartender
   - brave-browser
+  - corretto@21
   - cron
-  - cursor
+  - dbeaver-community
   - docker
   - font-hack-nerd-font
   - font-symbols-only-nerd-font
-  - session-manager-plugin
   - ghostty
-  - google-chrome
+  - git-credential-manager
   - intellij-idea
+  - karabiner-elements
   - keyboardcleantool
   - keyclu
-  - karabiner-elements
   - miro
   - mysqlworkbench
   - nikitabobko/tap/aerospace
   - notion
+  - pgadmin4
   - pycharm-ce
   - postman
   - raycast
+  - session-manager-plugin
   - visual-studio-code
   - vlc
-  - wezterm
