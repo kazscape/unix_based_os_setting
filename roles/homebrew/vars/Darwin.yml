@@ -57,6 +57,7 @@ brew_cask_packages:
   - mysqlworkbench
   - nikitabobko/tap/aerospace
   - notion
+  - obsidian
   - pgadmin4
   - pycharm-ce
   - postman
