@@ -40,6 +40,7 @@ brew_cask_packages:
   - alfred
   - alt-tab
   - appcleaner
+  - arc
   - bartender
   - brave-browser
   - corretto@21
@@ -55,6 +56,7 @@ brew_cask_packages:
   - keyboardcleantool
   - keyclu
   - miro
+  - monitorcontrol
   - mysqlworkbench
   - nikitabobko/tap/aerospace
   - notion
