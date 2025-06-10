@@ -37,6 +37,7 @@ brew_packages:
 
 brew_cask_packages:
   - 1password
+  - alfred
   - alt-tab
   - appcleaner
   - bartender
@@ -61,7 +62,6 @@ brew_cask_packages:
   - pgadmin4
   - pycharm-ce
   - postman
-  - raycast
   - session-manager-plugin
   - visual-studio-code
   - vlc
