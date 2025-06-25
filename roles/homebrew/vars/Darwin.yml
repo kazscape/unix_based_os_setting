@@ -3,6 +3,7 @@ brew_taps:
   - FelixKratz/formulae
 
 brew_packages:
+  - 1password-cli
   - awscli
   - bat
   - eza
@@ -65,5 +66,6 @@ brew_cask_packages:
   - pycharm-ce
   - postman
   - session-manager-plugin
+  - shottr
   - visual-studio-code
   - vlc
