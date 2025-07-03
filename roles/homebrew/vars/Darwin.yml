@@ -49,6 +49,7 @@ brew_cask_packages:
   - dbeaver-community
   - docker
   - font-noto-sans-jp
+  - font-noto-serif-jp
   - font-plemol-jp
   - font-plemol-jp-nf
   - ghostty
