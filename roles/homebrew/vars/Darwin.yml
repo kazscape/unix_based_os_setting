@@ -49,6 +49,7 @@ brew_cask_packages:
   - dbeaver-community
   - docker
   - font-hack-nerd-font
+  - font-plemol-jp
   - font-symbols-only-nerd-font
   - ghostty
   - git-credential-manager
