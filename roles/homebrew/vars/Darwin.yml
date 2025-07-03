@@ -48,6 +48,7 @@ brew_cask_packages:
   - cron
   - dbeaver-community
   - docker
+  - font-plemol-jp
   - font-plemol-jp-nf
   - font-symbols-only-nerd-font
   - ghostty
