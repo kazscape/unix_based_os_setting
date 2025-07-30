@@ -1,6 +1,7 @@
 ---
 brew_taps:
   - FelixKratz/formulae
+  - daipeihust/tap
 
 brew_packages:
   - 1password-cli
@@ -18,6 +19,7 @@ brew_packages:
   - git-gui
   - httpie
   - imagemagick
+  - im-select
   - jq
   - lazygit
   - lua
