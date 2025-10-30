@@ -48,6 +48,7 @@ brew_cask_packages:
   - bartender
   - brave-browser
   - corretto@21
+  - clickup
   - cron
   - dbeaver-community
   - docker
