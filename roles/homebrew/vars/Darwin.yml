@@ -43,7 +43,6 @@ brew_cask_packages:
   - alfred
   - alt-tab
   - appcleaner
-  - arc
   - background-music
   - bartender
   - brave-browser
@@ -62,6 +61,7 @@ brew_cask_packages:
   - karabiner-elements
   - keyboardcleantool
   - keyclu
+  - menubarx
   - miro
   - monitorcontrol
   - mysqlworkbench
