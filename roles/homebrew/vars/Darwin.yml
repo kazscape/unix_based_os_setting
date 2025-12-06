@@ -45,6 +45,7 @@ brew_cask_packages:
   - appcleaner
   - bartender
   - brave-browser
+  - chatgpt-atlas
   - corretto@21
   - clickup
   - cron
