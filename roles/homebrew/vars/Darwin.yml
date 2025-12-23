@@ -42,6 +42,7 @@ brew_cask_packages:
   - 1password
   - alfred
   - alt-tab
+  - antigravity
   - appcleaner
   - bartender
   - brave-browser
