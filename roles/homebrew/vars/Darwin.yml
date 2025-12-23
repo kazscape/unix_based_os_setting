@@ -30,6 +30,7 @@ brew_packages:
   - poppler
   - powerlevel10k
   - ripgrep
+  - stow
   - thefuck
   - volta
   - yazi
@@ -72,6 +73,7 @@ brew_cask_packages:
   - pgadmin4
   - pycharm-ce
   - postman
+  - raycast
   - session-manager-plugin
   - shottr
   - visual-studio-code
