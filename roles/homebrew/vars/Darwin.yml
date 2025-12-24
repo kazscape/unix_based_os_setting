@@ -26,6 +26,7 @@ brew_packages:
   - mysql
   - neovim
   - sevenzip
+  - tmux
   - tree
   - poppler
   - powerlevel10k
@@ -69,7 +70,6 @@ brew_cask_packages:
   - mysqlworkbench
   - nikitabobko/tap/aerospace
   - notion
-  - obsidian
   - pgadmin4
   - pycharm-ce
   - postman
@@ -78,3 +78,4 @@ brew_cask_packages:
   - shottr
   - visual-studio-code
   - vlc
+  - wezterm
